@@ -11,8 +11,12 @@ const apiSlice = createSlice({
     setData: (state, action) => {
       state.data = action.payload;
     },
+    toggleDesc: (state, action) => {
+      const index = action.payload-1;
+      state.data[index].isDescrizioneAperta = !state.data[index].isDescrizioneAperta;
+    },
   },
 });
 
-export const { setData } = apiSlice.actions;
+export const { setData, toggleDesc } = apiSlice.actions;
 export default apiSlice.reducer;
