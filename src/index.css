@@ -3,3 +3,34 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+
+.colonna{
+  padding: 70px;
+  position: relative;
+  z-index: 3;
+  box-shadow:  0, 0, 0, 0.7rem, rgba(0, 0, 0, 0.25);
+  animation: scala 0.5s forwards;
+  animation-fill-mode: forwards;
+}
+@keyframes scala{
+  0%{
+    transform: translateY(-100px);
+
+  }
+  100%{
+    transform: translateY(0px);
+  
+  }
+}
+
+
+.rubrica{
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  z-index: 2;
+  border-radius: 20px;
+  box-shadow: 0 0 0 0.7rem rgba(0, 0, 0, 0.25);
+  background-color: white;
+}

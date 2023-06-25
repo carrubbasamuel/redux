@@ -12,11 +12,15 @@ const apiSlice = createSlice({
       state.data = action.payload;
     },
     toggleDesc: (state, action) => {
-      const index = action.payload-1;
+      const index = action.payload - 1;
       state.data[index].isDescrizioneAperta = !state.data[index].isDescrizioneAperta;
+    },
+    toggleImg: (state, action) => {
+      const index = action.payload - 1;
+      state.data[index].isImgAperta = !state.data[index].isImgAperta;
     },
   },
 });
 
-export const { setData, toggleDesc } = apiSlice.actions;
+export const { setData, toggleDesc, toggleImg } = apiSlice.actions;
 export default apiSlice.reducer;
