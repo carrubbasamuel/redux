@@ -1,8 +1,17 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   data: [],
+  error: null,
 };
+
+export const fetchApi = createAsyncThunk('api/fetchApi', async () => {
+  const response = await fetch('https://dummyjson.com/users');
+  const json = await response.json();
+  return json.users;
+});
+
+
 
 const apiSlice = createSlice({
   name: 'api',
@@ -21,6 +30,7 @@ const apiSlice = createSlice({
     },
   },
 });
+
 
 export const { setData, toggleDesc, toggleImg } = apiSlice.actions;
 export default apiSlice.reducer;

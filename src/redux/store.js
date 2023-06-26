@@ -3,8 +3,6 @@ import apiReducer from './reducers/api';
 import rubricaReducer from './reducers/rubrica';
 
 
-
-
 const store = configureStore({
     reducer: {
         api: apiReducer,
